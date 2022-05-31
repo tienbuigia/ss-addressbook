@@ -3,11 +3,13 @@
 ## 1. search
 search_contact(){
 	# ask keywords to search
-	echo -en "Please enter keywords to search\
-		(can be name or phone number or email): "
+	echo "Please enter keywords to search"
+	echo -en "(Default list all): "
 	read keyword
-	# use keywords search though book file.
-	grep $keyword book
+	# if keyword is nothing -> list all
+	[ -z $keyword ] && cat book ||\
+		# get line that have keyword
+		grep -i "$keyword" book
 }
 ## 2. add
 add_contact(){
@@ -26,11 +28,13 @@ add_contact(){
 ## 3. remove
 remove_contact(){
 	# search for a contact
+	echo searching...
 	# delete this contact line
 }
 ## 4. edit
 edit_contact(){
 	# search for a contact
+	echo searching....
 	# remove this contact
 	# add new contact
 }
