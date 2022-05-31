@@ -6,10 +6,28 @@ search_contact(){
 	echo "Please enter keywords to search"
 	echo -en "(Default list all): "
 	read keyword
-	# if keyword is nothing -> list all
-	[ -z $keyword ] && cat book ||\
-		# get line that have keyword
-		grep -i "$keyword" book
+
+	if [ -z $keyword ]; then
+		# if keyword is nothing -> list all
+		cat book
+	else
+		# change Internal Field Separator
+		old_IFS="$IFS"
+		IFS=":"
+		# get contact in nice format
+		contact="$(grep -i "$keyword" book)"
+		# print contact to screen
+		set -- $contact
+		echo
+		echo "#---Contact Info---#"
+		echo "Name: $1"
+		echo "Phone number: $2"
+		echo "Email: $3"
+		echo "#------------------#"
+		echo
+		# restore IFS
+		IFS="$old_IFS"
+	fi
 }
 ## 2. add
 add_contact(){
