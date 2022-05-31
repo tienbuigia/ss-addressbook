@@ -5,6 +5,10 @@ a shell script exercise
 2. add contact
 3. remove contact
 4. edit contact
+## struggle
+2022-06-01: 
+damn, to continue this exercise I have to learn a bunch of text-manipulation-tools like sed, tr,...
+cha dố!
 ## learn source:
 [shellscript](https://www.shellscript.sh/)
 [lukesmith](https://lukesmith.xyz/)
