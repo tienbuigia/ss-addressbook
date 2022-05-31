@@ -6,4 +6,4 @@ a shell script exercise
 3. remove contact
 4. edit contact
 ## learn source:
-[shellscript](shellscript.sh)
+[shellscript](https://www.shellscript.sh/)
