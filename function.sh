@@ -1,5 +1,24 @@
-
 # this file contain functions for addressbook
+## 0.1 show
+show_info(){
+	# change Internal Field Separator
+	old_IFS="$IFS"
+	IFS=":"
+
+	# show contact's info to screen
+	contact="$@"
+	set -- $contact
+	echo
+	echo "#---Contact Info---#"
+	echo "Name: $1"
+	echo "Phone number: $2"
+	echo "Email: $3"
+	echo "#------------------#"
+	echo
+
+	# restore IFS
+	IFS="$old_IFS"
+}
 ## 1. search
 search_contact(){
 	# ask keywords to search
@@ -9,24 +28,15 @@ search_contact(){
 
 	if [ -z $keyword ]; then
 		# if keyword is nothing -> list all
-		cat book
+		contacts=`cat book`
+		for contact in $contacts
+		do
+			show_info $contact
+		done
 	else
-		# change Internal Field Separator
-		old_IFS="$IFS"
-		IFS=":"
 		# get contact in nice format
 		contact="$(grep -i "$keyword" book)"
-		# print contact to screen
-		set -- $contact
-		echo
-		echo "#---Contact Info---#"
-		echo "Name: $1"
-		echo "Phone number: $2"
-		echo "Email: $3"
-		echo "#------------------#"
-		echo
-		# restore IFS
-		IFS="$old_IFS"
+		show_info $contact
 	fi
 }
 ## 2. add
