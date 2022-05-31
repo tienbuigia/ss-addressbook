@@ -24,5 +24,13 @@ add_contact(){
 	echo "${name}:${pnum}:${email}" >> book
 }
 ## 3. remove
+remove_contact(){
+	# search for a contact
+	# delete this contact line
+}
 ## 4. edit
-
+edit_contact(){
+	# search for a contact
+	# remove this contact
+	# add new contact
+}

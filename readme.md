@@ -7,3 +7,5 @@ a shell script exercise
 4. edit contact
 ## learn source:
 [shellscript](https://www.shellscript.sh/)
+[lukesmith](https://lukesmith.xyz/)
+[mentalOutlaw](https://odysee.com/@AlphaNerd:8)
