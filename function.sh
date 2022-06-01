@@ -57,7 +57,6 @@ add_contact(){
 remove_contact(){
 	# search for a contact
 	search_contact
-	echo $keyword
 	# confirm delete
 	echo -en "Are you sure to remove these contact(s)? (type \"yes\" to confirm) "
 	read i
@@ -73,7 +72,15 @@ remove_contact(){
 ## 4. edit
 edit_contact(){
 	# search for a contact
-	echo searching....
+	search_contact
 	# remove this contact
+	sed -i "/${keyword}/Id" book
 	# add new contact
+	echo
+	echo "Please re-type contact info:"
+	echo "#--------------------------#"
+	add_contact
+	echo "#--------------------------#"
+	echo "Done!"
+	echo
 }

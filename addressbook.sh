@@ -34,7 +34,7 @@ while [ "$i" != 'q' ]; do
 			remove_contact
 			;;
 		4)
-			echo editing...
+			edit_contact
 			;;
 		q)
 			figlet bye bye!
