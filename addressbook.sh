@@ -15,6 +15,7 @@ show_menu(){
 	echo "3. Remove"
 	echo "4. Edit"
 	echo "q. Quit"
+	echo "m. Show this Menu"
 	echo "###--------------------------------###"
 	echo
 }
@@ -24,7 +25,7 @@ get_option(){
 	while [ "$i" != 'q' ]; do
 		# read input
 		# base on input, act accordingly
-		echo -en "Choose your option: "
+		echo -en "Choose your option('m' to show menu): "
 		read i
 		case $i in
 			1)
@@ -38,6 +39,9 @@ get_option(){
 				;;
 			4)
 				edit_contact
+				;;
+			m)
+				show_menu
 				;;
 			q)
 				figlet bye bye!
