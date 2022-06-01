@@ -31,7 +31,7 @@ while [ "$i" != 'q' ]; do
 			add_contact
 			;;
 		3)
-			echo removing...
+			remove_contact
 			;;
 		4)
 			echo editing...
