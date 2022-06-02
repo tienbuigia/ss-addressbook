@@ -6,8 +6,6 @@ source ./function.sh
 
 show_menu(){
 	# Show menu to screen
-	clear
-	figlet Tien dep trai!
 	echo
 	echo "###----------Address Book----------###"
 	echo "1. Search"
@@ -15,7 +13,6 @@ show_menu(){
 	echo "3. Remove"
 	echo "4. Edit"
 	echo "q. Quit"
-	echo "m. Show this Menu"
 	echo "###--------------------------------###"
 	echo
 }
@@ -23,9 +20,10 @@ show_menu(){
 get_option(){
 	i=-1
 	while [ "$i" != 'q' ]; do
+		show_menu
 		# read input
 		# base on input, act accordingly
-		echo -en "Choose your option('m' to show menu): "
+		echo -en "Choose your option: "
 		read i
 		case $i in
 			1)
@@ -40,11 +38,8 @@ get_option(){
 			4)
 				edit_contact
 				;;
-			m)
-				show_menu
-				;;
 			q)
-				figlet bye bye!
+				echo bye bye!
 				exit
 				;;
 			*)
@@ -58,4 +53,4 @@ get_option(){
 ### Main program start here ###
 ###############################
 
-show_menu; get_option
+get_option
