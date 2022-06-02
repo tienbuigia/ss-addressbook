@@ -53,4 +53,5 @@ get_option(){
 ### Main program start here ###
 ###############################
 
+clear
 get_option
