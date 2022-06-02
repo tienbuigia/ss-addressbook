@@ -25,6 +25,7 @@ get_option(){
 		# base on input, act accordingly
 		echo -en "Choose your option: "
 		read i
+		clear
 		case $i in
 			1)
 				search_contact
